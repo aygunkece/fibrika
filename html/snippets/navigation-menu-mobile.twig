@@ -1,0 +1,21 @@
+{% if navigationMenu.categories | length > 0 %}
+    {% for firstLevelCategory in navigationMenu.categories %}
+        <li class="level1 {% if firstLevelCategory.subCategories | length > 0 %}dropdown{% endif %}">
+            <a href="{{ firstLevelCategory.url }}" title="{{ firstLevelCategory.name }}"
+               class="uppercase">{{ firstLevelCategory.name }}</a>
+            {% if firstLevelCategory.subCategories | length > 0 %}
+                <span class="icon-sub-menu"></span>
+                <div class="menu-level1 js-open-menu">
+                    <ul class="level1">
+                        {% for secondLevelCategory in firstLevelCategory.subCategories %}
+                            <li class="level2">
+                                <a href="{{ secondLevelCategory.url }}" title="{{ secondLevelCategory.name }}"
+                                   class="capital">{{ secondLevelCategory.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </li>
+    {% endfor %}
+{% endif %}
