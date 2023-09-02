@@ -1,0 +1,123 @@
+<div class="contact-home1 space_top_100 space_bot_120">
+    <div class="container">
+        <div class="row">
+            <div class="newsletter-home3 space_bot_150 space_top_130 BG">
+                {% if theme.settings.newsletter_title or theme.settings.newsletter_short_details %}
+                    {% if theme.settings.newsletter_title %}
+                        <h1 class="title-font capital title-newsletter text-center">{{ theme.settings.newsletter_title }}</h1>
+                    {% endif %}
+                    {% if theme.settings.newsletter_short_details %}
+                        <p class="des-font des-newsletter space_bot_60 text-center">{{ theme.settings.newsletter_short_details }}</p>
+                    {% endif %}
+                {% endif %}
+                <form class="form-group des-font flex" method="post" target="_blank">
+                    <input type="email" name="EMAIL" class="form-control" placeholder="{{ theme.settings.newsletter_placeholder }}"
+                           onfocus="this.placeholder = ''" onblur="this.placeholder = '{{ theme.settings.newsletter_placeholder }}'"
+                           aria-label="Newsletter Email" autocomplete="off" >
+                    <button type="submit" aria-label="Submit" class="menu-font uppercase">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_542_928)">
+                                <path d="M22 20.007C21.9982 20.2696 21.8931 20.521 21.7075 20.7068C21.5219 20.8926 21.2706 20.9979 21.008 21H2.992C2.72881 20.9997 2.4765 20.895 2.29049 20.7088C2.10448 20.5226 2 20.2702 2 20.007V19H20V7.3L12 14.5L2 5.5V4C2 3.73478 2.10536 3.48043 2.29289 3.29289C2.48043 3.10536 2.73478 3 3 3H21C21.2652 3 21.5196 3.10536 21.7071 3.29289C21.8946 3.48043 22 3.73478 22 4V20.007ZM4.434 5L12 11.81L19.566 5H4.434ZM0 15H8V17H0V15ZM0 10H5V12H0V10Z" fill="white"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_542_928">
+                                    <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <div class="footer-row-2">
+                <div class="container">
+                    {% if theme.settings.footer_links | spaceless | length > 0 %}
+                        <div class="footer-menu-container" data-menu-type="{{ theme.settings.footer_menu_type }}">
+                            {{ theme.settings.footer_links | raw }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="footer-row-3">
+                <div class="container">
+                    <div class="footer-copyright">
+                        <div>
+                            <div class="secure">
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            {% if theme.settings.copyright %}
+                                <div class="copyright">{{ theme.settings.copyright | raw }}</div>
+                            {% endif %}
+                        </div>
+                        {% if theme.settings.facebook or theme.settings.instagram or theme.settings.twitter or theme.settings.pinterest or theme.settings.youtube or theme.settings.linkedin or theme.settings.whatsapp %}
+                            <div class="footer-social">
+                                <div class="footer-social-content">
+                                    {% if theme.settings.facebook %}
+                                        <div>
+                                            <a class="footer-social-facebook" href="{{ theme.settings.facebook }}" target="_blank">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                    {% if theme.settings.instagram %}
+                                        <div>
+                                            <a class="footer-social-instagram" href="{{ theme.settings.instagram }}" target="_blank">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                    {% if theme.settings.twitter %}
+                                        <div>
+                                            <a class="footer-social-twitter" href="{{ theme.settings.twitter }}" target="_blank">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                    {% if theme.settings.pinterest %}
+                                        <div>
+                                            <a class="footer-social-pinterest" href="{{ theme.settings.pinterest }}" target="_blank">
+                                                <i class="fab fa-pinterest-p"></i>
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                    {% if theme.settings.youtube %}
+                                        <div>
+                                            <a class="footer-social-youtube" href="{{ theme.settings.youtube }}" target="_blank">
+                                                <i class="fab fa-youtube"></i>
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                    {% if theme.settings.linkedin %}
+                                        <div>
+                                            <a class="footer-social-linkedin" href="{{ theme.settings.linkedin }}" target="_blank">
+                                                <i class="fab fa-linkedin-in"></i>
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                    {% if theme.settings.whatsapp %}
+                                        <div>
+                                            <a class="footer-social-whatsapp" href="https://wa.me/9{{ theme.settings.whatsapp | replace({' ': ''}) }}" target="_blank">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div id="scroll-top">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+{#
+<div class="container-fluid des-font text-center space_top_bot_50 copyright">
+    Copyright © 2018 EngoTheme. All rights reserved.
+</div>
+#}

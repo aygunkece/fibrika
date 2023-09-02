@@ -1,116 +1,67 @@
+{% set orders = {"1": theme.settings.slider_order_1,"2": theme.settings.slider_order_2,"3": theme.settings.slider_order_3,"4": theme.settings.slider_order_4,"5": theme.settings.slider_order_5,"6": theme.settings.slider_order_6,"7": theme.settings.slider_order_7,"8": theme.settings.slider_order_8,"9": theme.settings.slider_order_9,"10": theme.settings.slider_order_10} %}
 <div class="slider-home4 container-fluid clear-space relative">
-    <div class="content-slider relative">
-        <div class="img-slider img-zoom-container">
-            <a href="#" class="inline-block relative">
-                <img src="asset/img/slider_home4.jpg" class="img-responsive" id="myimage1" alt="">
-                <div id="myresult1" class="img-zoom-result"></div>
-            </a>
+    {% for slide, order in orders | sort %}
+        {% if order != '' %}
+        {% if theme.settings['slider_status_' ~ slide] %}
+        <div class="content-slider relative">
+        {% if theme.settings['slider_link_' ~ slide] %}
+            <div class="img-slider img-zoom-container">
+                {% if theme.settings['slider_link_' ~ slide] %}
+                <a href="{{ theme.settings['slider_link_' ~ slide] }}"{{ theme.settings['slider_target_' ~ slide] ? ' target="_blank"' }}
+                   class="inline-block relative">
+                    {% endif %}
+                    <img src="{{ themeAsset(theme.settings['slider_picture_' ~ slide]) }}" class="img-responsive"
+                         id="myimage1" alt="">
+                    <div id="myresult1" class="img-zoom-result"></div>
+                </a>
+            </div>
 
-        </div>
-        <div class="absolute text-slider">
-            <h1 class="title-font title-slider delay2">Kombiniertes<br>oversize- shirt</h1>
-            <p class="des-font des-slider delay1_5">BlackBird collection of minimal, sleek and<br>functional Carryalls were designedwith<br>creatives in mind.</p>
-            <div class="flex delay03 social-home3">
-                <a href="#" class="delay03 space_right_20"><i class="ti-facebook"></i></a>
-                <a href="#" class="delay03 container_20"><i class="ti-twitter-alt"></i></a>
-                <a href="#" class="delay03 container_20"><i class="ti-pinterest"></i></a>
-                <a href="#" class="delay03 container_20"><i class="ti-linkedin"></i></a>
-            </div>
-        </div>
-        <div class="absolute seasion">
-            <p class="number-font delay2">Summner 2018</p>
-        </div>
-    </div>
-    <!--  -->
-    <div class="content-slider relative">
-        <div class="img-slider img-zoom-container">
-            <a href="#" class="inline-block relative">
-                <img src="asset/img/slider_home4.jpg" class="img-responsive" id="myimage2" alt="">
-                <div id="myresult2" class="img-zoom-result"></div>
-            </a>
-        </div>
-        <div class="absolute text-slider">
-            <h1 class="title-font title-slider delay2">Kombiniertes<br>oversize- shirt</h1>
-            <p class="des-font des-slider delay1_5">BlackBird collection of minimal, sleek and<br>functional Carryalls were designedwith<br>creatives in mind.</p>
-            <div class="flex delay03 social-home3">
-                <a href="#" class="delay03 space_right_20"><i class="ti-facebook"></i></a>
-                <a href="#" class="delay03 container_20"><i class="ti-twitter-alt"></i></a>
-                <a href="#" class="delay03 container_20"><i class="ti-pinterest"></i></a>
-                <a href="#" class="delay03 container_20"><i class="ti-linkedin"></i></a>
-            </div>
-        </div>
-        <div class="absolute seasion">
-            <p class="number-font delay2">Summner 2018</p>
-        </div>
-    </div>
-    <!--  -->
-    <!--  -->
-    <div class="content-slider relative">
-        <div class="img-slider img-zoom-container">
-            <a href="#" class="inline-block relative">
-                <img src="asset/img/slider_home4.jpg" class="img-responsive" id="myimage3" alt="">
-                <div id="myresult3" class="img-zoom-result"></div>
-            </a>
-        </div>
-        <div class="absolute text-slider">
-            <h1 class="title-font title-slider delay2">Kombiniertes<br>oversize- shirt</h1>
-            <p class="des-font des-slider delay1_5">BlackBird collection of minimal, sleek and<br>functional Carryalls were designedwith<br>creatives in mind.</p>
-            <div class="flex delay03 social-home3">
-                <a href="#" class="delay03 space_right_20"><i class="ti-facebook"></i></a>
-                <a href="#" class="delay03 container_20"><i class="ti-twitter-alt"></i></a>
-                <a href="#" class="delay03 container_20"><i class="ti-pinterest"></i></a>
-                <a href="#" class="delay03 container_20"><i class="ti-linkedin"></i></a>
-            </div>
-        </div>
-        <div class="absolute seasion">
-            <p class="number-font delay2">Summner 2018</p>
-        </div>
-    </div>
-    <!--  -->
-    <!--  -->
-    <div class="content-slider relative">
-        <div class="img-slider img-zoom-container">
-            <a href="#" class="inline-block relative">
-                <img src="asset/img/slider_home4.jpg" class="img-responsive" id="myimage4" alt="">
-                <div id="myresult4" class="img-zoom-result"></div>
-            </a>
-        </div>
-        <div class="absolute text-slider">
-            <h1 class="title-font title-slider delay2">Kombiniertes<br>oversize- shirt</h1>
-            <p class="des-font des-slider delay1_5">BlackBird collection of minimal, sleek and<br>functional Carryalls were designedwith<br>creatives in mind.</p>
-            <div class="flex delay03 social-home3">
-                <a href="#" class="delay03 space_right_20"><i class="ti-facebook"></i></a>
-                <a href="#" class="delay03 container_20"><i class="ti-twitter-alt"></i></a>
-                <a href="#" class="delay03 container_20"><i class="ti-pinterest"></i></a>
-                <a href="#" class="delay03 container_20"><i class="ti-linkedin"></i></a>
-            </div>
-        </div>
-        <div class="absolute seasion">
-            <p class="number-font delay2">Summner 2018</p>
-        </div>
-    </div>
-    <!--  -->
-    <!--  -->
-    <div class="content-slider relative">
-        <div class="img-slider img-zoom-container">
-            <a href="#" class="inline-block relative">
-                <img src="asset/img/slider_home4.jpg" class="img-responsive" id="myimage5" alt="">
-                <div id="myresult5" class="img-zoom-result"></div>
-            </a>
-        </div>
-        <div class="absolute text-slider">
-            <h1 class="title-font title-slider delay2">Kombiniertes<br>oversize- shirt</h1>
-            <p class="des-font des-slider delay1_5">BlackBird collection of minimal, sleek and<br>functional Carryalls were designedwith<br>creatives in mind.</p>
-            <div class="flex delay03 social-home3">
-                <a href="#" class="delay03 space_right_20"><i class="ti-facebook"></i></a>
-                <a href="#" class="delay03 container_20"><i class="ti-twitter-alt"></i></a>
-                <a href="#" class="delay03 container_20"><i class="ti-pinterest"></i></a>
-                <a href="#" class="delay03 container_20"><i class="ti-linkedin"></i></a>
-            </div>
-        </div>
-        <div class="absolute seasion">
-            <p class="number-font delay2">Summner 2018</p>
-        </div>
-    </div>
-    <!--  -->
+            {% if theme.settings['slider_title_' ~ slide] or theme.settings['slider_content_' ~ slide] or theme.settings['slider_button_' ~ slide] %}
+                <div class="absolute text-slider">
+                {% if theme.settings['slider_title_' ~ slide] %}
+                    <h1 class="title-font title-slider delay2"
+                        style="color:{{ theme.settings['slider_title_color_' ~ slide] }};">{{ theme.settings['slider_title_' ~ slide] }}</h1>
+                {% endif %}
+                {% if theme.settings['slider_content_' ~ slide] %}
+                    <p class="des-font des-slider delay1_5"
+                       style="color:{{ theme.settings['slider_content_color_' ~ slide] }};">
+                        {{ theme.settings['slider_content_' ~ slide] }}
+                    </p>
+                {% endif %}
+                {% if theme.settings.facebook  or theme.settings.twitter or theme.settings.linkedin %}
+                    <div class="flex delay03 social-home3">
+                    {% if theme.settings.facebook %}
+                        <a href="{{ theme.settings.facebook }}" target="_blank" class="delay03 space_right_20">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47 14 5.5 16 5.5H17.5V2.14C17.174 2.097 15.943 2 14.643 2C11.928 2 10 3.657 10 6.7V9.5H7V13.5H10V22H14V13.5Z"
+                                      fill="white"/>
+                            </svg>
+                        </a>
+                    {% endif %}
+                    {% if theme.settings.twitter %}
+                        <a href="{{ theme.settings.twitter }}" target="_blank" class="delay03 container_20">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M22.1618 5.65593C21.3984 5.99362 20.5888 6.2154 19.7598 6.31393C20.6336 5.79136 21.2875 4.96894 21.5998 3.99993C20.7798 4.48793 19.8808 4.82993 18.9438 5.01493C18.3144 4.34151 17.4802 3.89489 16.5708 3.74451C15.6614 3.59413 14.7277 3.74842 13.9151 4.18338C13.1024 4.61834 12.4562 5.30961 12.0769 6.14972C11.6976 6.98983 11.6066 7.93171 11.8178 8.82893C10.1549 8.74558 8.52814 8.31345 7.0431 7.56059C5.55805 6.80773 4.24794 5.75097 3.19781 4.45893C2.8261 5.09738 2.63076 5.82315 2.63181 6.56193C2.63181 8.01193 3.36981 9.29293 4.49181 10.0429C3.82782 10.022 3.17844 9.84271 2.59781 9.51993V9.57193C2.59801 10.5376 2.93218 11.4735 3.54366 12.221C4.15513 12.9684 5.00629 13.4814 5.95281 13.6729C5.33642 13.84 4.69012 13.8646 4.06281 13.7449C4.32968 14.5762 4.84982 15.3031 5.5504 15.824C6.25099 16.3449 7.09694 16.6337 7.96981 16.6499C7.10229 17.3313 6.10899 17.8349 5.04669 18.1321C3.98439 18.4293 2.87394 18.5142 1.77881 18.3819C3.69051 19.6114 5.9159 20.264 8.18881 20.2619C15.8818 20.2619 20.0888 13.8889 20.0888 8.36193C20.0888 8.18193 20.0838 7.99993 20.0758 7.82193C20.8947 7.23009 21.6014 6.49695 22.1628 5.65693L22.1618 5.65593Z"
+                                      fill="white"/>
+                            </svg>
+                        </a>
+                    {% endif %}
+                    {% if theme.settings.linkedin %}
+                        <a href="{{ theme.settings.linkedin }}" target="_blank" class="delay03 container_20">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M13.3701 2.09383C10.9774 1.76469 8.54634 2.31238 6.52592 3.63579C4.5055 4.9592 3.03214 6.96893 2.3779 9.2939C1.72365 11.6189 1.9327 14.102 2.96646 16.2849C4.00021 18.4677 5.78885 20.2029 8.0021 21.1698C7.94224 20.4016 7.99718 19.6288 8.1651 18.8768C8.3501 18.0378 9.4611 13.4138 9.4611 13.4138C9.23986 12.9179 9.1293 12.3798 9.1371 11.8368C9.1371 10.3518 9.9941 9.24383 11.0601 9.24383C11.2516 9.24105 11.4415 9.27953 11.6168 9.35666C11.7921 9.4338 11.9487 9.54778 12.076 9.69086C12.2034 9.83393 12.2984 10.0027 12.3547 10.1858C12.4109 10.3689 12.4271 10.5619 12.4021 10.7518C12.4021 11.6518 11.8241 13.0138 11.5221 14.2918C11.4624 14.5262 11.4586 14.7713 11.511 15.0075C11.5635 15.2436 11.6706 15.4641 11.8239 15.6512C11.9771 15.8383 12.1722 15.9868 12.3933 16.0847C12.6145 16.1826 12.8555 16.2272 13.0971 16.2148C14.9951 16.2148 16.2671 13.7838 16.2671 10.9138C16.2671 8.71383 14.8101 7.06583 12.1241 7.06583C11.4815 7.04086 10.8405 7.14676 10.24 7.37709C9.63958 7.60742 9.09221 7.95738 8.63115 8.40572C8.17008 8.85406 7.80495 9.39144 7.55792 9.98521C7.31089 10.579 7.18711 11.2168 7.1941 11.8598C7.16546 12.5732 7.3956 13.2728 7.8421 13.8298C7.92553 13.8921 7.98645 13.9798 8.01567 14.0798C8.04489 14.1797 8.04083 14.2864 8.0041 14.3838C7.9581 14.5678 7.8421 15.0068 7.7961 15.1678C7.78653 15.2224 7.76427 15.274 7.73112 15.3184C7.69797 15.3629 7.65484 15.3989 7.60523 15.4236C7.55561 15.4483 7.50088 15.461 7.44545 15.4607C7.39002 15.4604 7.33544 15.4471 7.2861 15.4218C5.9021 14.8678 5.2501 13.3448 5.2501 11.6058C5.2501 8.75883 7.6341 5.35083 12.4041 5.35083C16.2001 5.35083 18.7241 8.12783 18.7241 11.0978C18.7241 15.0068 16.5471 17.9458 13.3301 17.9458C12.8493 17.9612 12.3724 17.8551 11.9434 17.6373C11.5145 17.4195 11.1474 17.0971 10.8761 16.6998C10.8761 16.6998 10.2981 19.0158 10.1841 19.4538C9.95139 20.2105 9.608 20.9286 9.1651 21.5848C10.0881 21.8648 11.0471 22.0048 12.0111 22.0008C13.3247 22.0019 14.6256 21.7438 15.8393 21.2414C17.053 20.739 18.1556 20.0021 19.0842 19.0729C20.0127 18.1438 20.7488 17.0406 21.2504 15.8265C21.7519 14.6125 22.0091 13.3114 22.0071 11.9978C22.0059 9.58283 21.1309 7.24983 19.5437 5.42961C17.9566 3.6094 15.7644 2.4249 13.3721 2.09483L13.3701 2.09383Z"
+                                      fill="white"/>
+                            </svg>
+                        </a>
+                        </div>
+                    {% endif %}
+                    </div>
+                    <div class="absolute seasion">
+                        <p class="number-font delay2">Summner 2018</p>
+                    </div>
+                {% endif %}
+                </div>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
 </div>

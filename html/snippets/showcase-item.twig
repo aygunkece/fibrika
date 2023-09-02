@@ -1,0 +1,62 @@
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 product relative margin_bottom_20">
+    {% if item.product.realAmount == 0 %}
+        <a class="showcase-label-container" href="{{ item.product.url }}" aria-label="Product Detail">
+            <div class="sold-out-label"><span>{{ theme.settings.label_soldout }}</span></div>
+        </a>
+    {% endif %}
+    <div class="img-product relative">
+        <a href="{{ item.product.url }}" title="{{ item.product.fullName }}">
+            {% if theme.settings.use_lazy_load %}
+                <img class="lazyload" src="{{ themeAsset('images/loader.png') }}"
+                     data-src="{{ item.product.primaryImage.thumbUrl | default(getNopicImageUrl()) }}"
+                     alt="{{ item.product.fullName }}">
+            {% else %}
+                <img src="{{ item.product.primaryImage.thumbUrl | default(getNopicImageUrl()) }}"
+                     alt="{{ item.product.fullName }}" class="img-responsive">
+            {% endif %}
+        </a>
+        {% if item.product.isNew %}
+            <figure class="absolute uppercase label-new title-font text-center">{{ theme.settings.label_new }}</figure>
+        {% endif %}
+        {% if preferences.sales_allowed %}
+            <div class="product-icon text-center absolute">
+                {% if item.product.stockAmount > 0 %}
+                {% if item.product.realAmount > 0 %}
+                <form method="post" action="{{ path("cart_index") }}" enctype="multipart/form-data"
+                      class="inline-block icon-addcart">
+                    <input type="hidden" name="id" value=""/>
+                    <button type="submit" name="add" class="enj-add-to-cart-btn btn-default"
+                            data-product-id="{{ item.product.id }}"><i class="ti-bag"></i></button>
+                    {% else %}
+                        <button type="submit" name="add"
+                                class="no-stock-button">{{ theme.settings.showcase_nostock_button }}</button>
+                    {% endif %}
+                    {% else %}
+                        <button type="submit" name="add"
+                                class="no-stock-button">{{ theme.settings.showcase_nostock_button }}</button>
+                    {% endif %}
+                </form>
+                <a href="javascript:void(0);"
+                   class="icon-heart inline-block add-my-favorites{{ isFavoriteProduct(item.product.id) ? ' favorite-product' }}"
+                   data-selector="add-my-favorites"
+                   data-product-id="{{ item.product.id }}"
+                   aria-label="Add To Favorites">
+                    <i class="ti-heart"></i>
+                </a>
+                <a href="#" class="engoj_btn_quickview icon-quickview inline-block" title="quickview">
+                    <i class="ti-more-alt"></i>
+                </a>
+            </div>
+        {% endif %}
+    </div>
+    <div class="info-product text-center absolute full-width delay03 hidden-sm hidden-xs">
+        <h4 class="des-font capital title-product space_top_20">
+            <a href="{{ item.product.url }}" title="{{ item.product.fullName }}">{{ item.product.fullName }}</a>
+        </h4>
+        {% if preferences.sales_allowed %}
+            <p class="number-font price-product">
+                <span class="price">{{ item.product.discountedPriceWithTax(preferences.default_currency) | money ~ ' ' ~ preferences.default_currency }}</span>
+            </p>
+        {% endif %}
+    </div>
+</div>

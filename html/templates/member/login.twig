@@ -1,0 +1,87 @@
+{% extends 'html/layouts/member.twig' %}
+{% block content %}
+    <div class="user-login-page-wrapper">
+        <div class="user-login-page-container">
+            <div class="user-login-page-logo">
+                <a href="{{ path('entry') }}" aria-label="Logo">
+                    {% if theme.settings.login_logo %}
+                        <img src="{{ themeAsset(theme.settings.login_logo) }}" alt="">
+                    {% else %}
+                        <img src="{{ themeAsset(theme.settings.logo) }}" alt="">
+                    {% endif %}
+                </a>
+            </div>
+            <div class="user-login-page-content">
+                <div class="user-login-page-title">
+                    <span>{{ theme.settings.user_login_page_title }}</span>
+                </div>
+                <form action="" name="login-form" method="POST" data-selector="login-form">
+                    <div class="user-login-page-row">
+                        <input class="form-control" type="text" name="email" id="user-login-email" placeholder="{{ getLang('_Email_') }}" value="{{ cookie_member_email }}" autocomplete="email">
+                    </div>
+                    <div class="user-login-page-row">
+                        <input class="form-control" type="password" name="pass" id="user-login-pass" placeholder="{{ getLang('_Password_') }}" autocomplete="current-password">
+                    </div>
+                    <div class="user-login-page-row mb-0 d-flex align-items-center justify-content-between">
+                        <div class="checkbox-custom">
+                            <input type="checkbox" name="remember" id="remember-me" value="1" {{ (cookie_member_email ? 'checked': '') }}>
+                            <label for="remember-me">{{ getLang("_RememberMe_") }}</label>
+                        </div>
+                        <div class="user-login-forgot-pass">
+                            <a href="{{ path('member_forgotpass') }}">{{ getLang("_ForgotPass_") }}</a>
+                        </div>
+                    </div>
+                    <div class="user-login-page-row mb-0">
+                        <button type="submit" class="btn btn-primary btn-block" data-selector="login-form-button">{{ theme.settings.user_login_page_buton_title }}</button>
+                    </div>
+                </form>
+            </div>
+            {% if preferences.order_without_registration == '0' and next == 'order2' %}
+                <div class="user-login-page-order-registration">{{ getLang('_PleaseLoginToOrder_') }}</div>
+            {% endif %}
+            {% if preferences.order_without_registration and next == 'order2' %}
+                <div class="user-login-page-row mb-0">
+                    <input type="hidden" name="logonOrder" value="1">
+                    <a href="{{ path('order_step2') }}" class="btn btn-green btn-block">{{ theme.settings.user_signup_page_not_login_title }}</a>
+                </div>
+            {% endif %}
+            {% if membership %}
+                <div class="user-login-page-row mb-0">
+                    <a href="{{ path('bank_transfer_form') }}" class="btn btn-green btn-block">{{ theme.settings.user_signup_page_not_login_title }}</a>
+                </div>
+            {% endif %}
+            {% if preferences.member_signup %}
+                <div class="user-login-page-title user-login-page-sub-title">
+                    <span>{{ theme.settings.user_signup_page_title }}</span>
+                </div>
+                <div class="user-login-page-row">
+                    <a href="{{ path('member_signup') }}" class="btn btn-secondary btn-block">{{ theme.settings.user_signup_page_button_title }}</a>
+                </div>
+            {% endif %}
+            {% if theme.settings.use_facebook_login or theme.settings.use_google_login %}
+                <div class="user-login-page-row user-login-page-button-social">
+                    {% if theme.settings.use_google_login %}
+                        <div>
+                            <button type="button" data-selector="google-login" class="btn btn-google btn-block">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M19.6444 12.1778C19.6444 11.6444 19.5556 11.0222 19.4667 10.5778H12V13.6889H16.2667C16.0889 14.6666 15.5556 15.4666 14.6667 16.0889V18.1333H17.3333C18.8444 16.7111 19.6444 14.5778 19.6444 12.1778Z" fill="#4285F4"/><path d="M11.9998 20C14.1331 20 15.9998 19.2889 17.3331 18.0444L14.6664 16.0889C13.9553 16.5333 13.0664 16.8889 11.9998 16.8889C9.95534 16.8889 8.17756 15.4666 7.55534 13.6H4.88867V15.5555C6.13312 18.2222 8.88867 20 11.9998 20Z" fill="#34A853"/><path d="M7.55556 13.5111C7.37778 13.0667 7.28889 12.5333 7.28889 12C7.28889 11.4667 7.37778 10.9333 7.55556 10.4889V8.44446H4.88889C4.35556 9.51112 4 10.7556 4 12C4 13.2445 4.26667 14.4889 4.88889 15.5556L7.55556 13.5111Z" fill="#FBBC05"/><path d="M11.9998 7.2C13.1553 7.2 14.222 7.64444 15.022 8.35556L17.3331 6.04444C15.9998 4.8 14.1331 4 11.9998 4C8.88867 4 6.13312 5.77778 4.88867 8.44444L7.55534 10.4889C8.17756 8.62222 9.95534 7.2 11.9998 7.2Z" fill="#EA4335"/>
+                                </svg>
+                                <span>{{ theme.settings.user_signup_page_google_title }}</span>
+                            </button>
+                        </div>
+                    {% endif %}
+                    {% if theme.settings.use_facebook_login %}
+                        <div>
+                            <button type="button" data-selector="facebook-login" class="btn btn-facebook btn-block">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 12.0506C20 7.60327 16.4194 4 12 4C7.58065 4 4 7.60327 4 12.0506C4 16.0758 6.90323 19.4194 10.7419 20.0037V14.3878H8.70968V12.0506H10.7419V10.2976C10.7419 8.28497 11.9355 7.14881 13.7419 7.14881C14.6452 7.14881 15.5484 7.31112 15.5484 7.31112V9.29129H14.5484C13.5484 9.29129 13.2258 9.90807 13.2258 10.5573V12.0506H15.4516L15.0968 14.3878H13.2258V20.0037C17.0645 19.4194 20 16.0758 20 12.0506Z" fill="#485A96"/>
+                                </svg>
+                                <span>{{ theme.settings.user_signup_page_facebook_title }}</span>
+                            </button>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

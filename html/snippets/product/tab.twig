@@ -1,0 +1,49 @@
+<div class="product-detail-tab" data-product-id="{{ product.id }}">
+    <div class="product-detail-tab-content">
+        <div class="product-detail-tab-row{% if theme.settings.product_detail_mobile_first_tab %} active{% endif %}">
+            <div class="{% if theme.settings.product_detail_mobile_first_tab %} active{% endif %}" data-tab-index="1"><a href="javascript:void(0);">{{ theme.settings.tab_product_info }}</a></div>
+            <div class="{% if theme.settings.product_detail_mobile_first_tab %}active{% endif %}" data-tab-content="1">
+                <div class="product-detail">{{ product.details | raw }}</div>
+                {% if product.specs | length > 0 and theme.settings.display_product_attributes %}
+                    <div class="product-specs-table">
+                        <table class="table">
+                            <tbody>
+                                {% for spec in product.specs %}
+                                    <tr>
+                                        <td>{{ spec.name }}</td>
+                                        <td>:</td>
+                                        <td>{{ spec.values | join(', ') }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="product-detail-tab-row">
+            {% if theme.settings.product_detail_page_tabs.display_product_comments %}
+                <div class="" data-tab-index="2"><a href="javascript:void(0);">{{ theme.settings.tab_product_comments }}</a></div>
+                <div class="" data-tab-content="2">{% include 'html/snippets/product/comment.twig' %}</div>
+            {% endif %}
+        </div>
+        <div class="product-detail-tab-row">
+            {% if theme.settings.product_detail_page_tabs.display_payment_options %}
+                <div class="" data-tab-index="3" data-type="payment-option"><a href="javascript:void(0);">{{ theme.settings.tab_product_payment_options }}</a></div>
+                <div class="" data-tab-content="3"></div>
+            {% endif %}
+        </div>
+        {% if theme.settings.product_detail_page_tabs.display_product_feeds %}
+		    <div class="product-detail-tab-row">
+                <div class="" data-tab-index="4"><a href="javascript:void(0);">{{ theme.settings.tab_product_feeds }}</a></div>
+                <div class="" data-tab-content="4">{% include 'html/snippets/product/form/product-feed.twig' %}</div>
+            </div>
+        {% endif %}
+        {% if theme.settings.product_detail_page_tabs.display_special_information_area and product.specialInfo %}
+        <div class="product-detail-tab-row">
+                <div class="" data-tab-index="5"><a href="javascript:void(0);">{{ product.specialInfo.title }}</a></div>
+                <div class="" data-tab-content="5"><div>{{ product.specialInfo.content | raw }}</div></div>
+        </div>
+        {% endif %}
+    </div>
+</div>

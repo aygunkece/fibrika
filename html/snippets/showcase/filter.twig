@@ -1,0 +1,58 @@
+{% if filter_categories | length or filter_brands | length > 0 %}
+    {% if filter_categories | length > 0 %}
+        <div class="product-category-list product-category-and-brand-list">
+            <div class="product-category-list-header product-category-and-brand-list-header">
+                <span>{{ theme.settings.product_category_list_header }}</span>
+            </div>
+            <div class="product-category-list-content product-category-and-brand-list-content">
+                <div{% if theme.settings.display_category_logo %} class="product-category-and-brand-list-content-image"{% endif %}>
+                    {% for category in filter_categories %}
+                        <div class="product-category-list-item">
+                            <a href='{{ category.filterUrl }}'>
+                                {% if theme.settings.display_category_logo %}
+                                    <div class="product-list-image">
+                                        <img src='{{ category.imageUrl | default(getNopicImageUrl()) }}' alt="{{ category.name }}">
+                                    </div>
+                                {% endif %}
+                                <div class="product-category-list-title">
+                                    {{ category.name }}
+                                    {% if category.productCount > 0 %}
+                                        <span>({{ category.productCount }})</span>
+                                    {% endif %}
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if filter_brands | length > 0 %}
+        <div class="product-brand-list product-category-and-brand-list">
+            <div class="product-brand-list-header product-category-and-brand-list-header">
+                <span>{{ theme.settings.product_brand_list_header }}</span>
+            </div>
+            <div class="product-brand-list-content product-category-and-brand-list-content">
+                <div{% if theme.settings.brand_view_type == 'logo' %} class="product-category-and-brand-list-content-image"{% endif %}>
+                    {% for brand in filter_brands %}
+                        <div class="product-brand-list-item">
+                            <a href='{{ brand.filterUrl }}'>
+                                {% if theme.settings.brand_view_type == 'logo' %}
+                                    <div class="product-list-image">
+                                        <img src='{{ brand.imageUrl | default(getNopicImageUrl()) }}' alt="{{ brand.name }}">
+                                    </div>
+                                {% endif %}
+                                <div class="product-brand-list-title">
+                                    {{ brand.name }}
+                                    {% if brand.productCount > 0 %}
+                                        <span>({{ brand.productCount }})</span>
+                                    {% endif %}
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endif %}

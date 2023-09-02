@@ -1,0 +1,45 @@
+{% if product.promotions | length > 0 %}
+	<div class="promotion-wrapper">
+		<div class="promotion-title">
+			<h4>{{ theme.settings.promotion_title }}</h4>
+		</div>
+		<div class="promotion-content">
+			{% for promotion in product.promotions %}
+				<div class="promotion-row">
+					<div class="row no-gutters">
+						<div class="col-2 col-md-1">
+							<div class="promotion-icon">
+								{% if promotion.type == 'free' %}
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                        <path d="M6.75 5.625C6.75 2.5184 9.2684 0 12.375 0C15.4816 0 18 2.5184 18 5.625C18 2.5184 20.5184 0 23.625 0C26.7316 0 29.25 2.5184 29.25 5.625L29.25 5.63753C29.2501 5.79472 29.2503 6.24525 29.1649 6.75H33.75C34.9926 6.75 36 7.75736 36 9V13.5C36 14.7426 34.9926 15.75 33.75 15.75V32.625C33.75 34.489 32.239 36 30.375 36H5.625C3.76104 36 2.25 34.489 2.25 32.625L2.25 15.75C1.00736 15.75 0 14.7426 0 13.5V9C0 7.75736 1.00736 6.75 2.25 6.75H6.83511C6.7497 6.24525 6.74992 5.79471 6.75 5.63752C6.75 5.63312 6.75 5.62894 6.75 5.625ZM9.15298 6.75H15.75V5.625C15.75 3.76104 14.239 2.25 12.375 2.25C10.511 2.25 9 3.76104 9 5.625C9 5.81569 9.00438 6.24039 9.10098 6.59462C9.11817 6.65763 9.13599 6.70919 9.15298 6.75ZM20.25 6.75H26.847C26.864 6.70919 26.8818 6.65763 26.899 6.59462C26.9956 6.24039 27 5.81569 27 5.625C27 3.76104 25.489 2.25 23.625 2.25C21.761 2.25 20.25 3.76104 20.25 5.625V6.75ZM2.25 9V13.5H15.75V9H2.25ZM20.25 9V13.5H33.75V9H20.25ZM31.5 15.75H20.25V33.75H30.375C30.9963 33.75 31.5 33.2463 31.5 32.625V15.75ZM15.75 33.75V15.75H4.5V32.625C4.5 33.2463 5.00368 33.75 5.625 33.75H15.75Z" fill="#110F21"/>
+                                    </svg>
+								{% else %}
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                        <path d="M6.75 4.5L6.75 14.818L22.5 30.568L32.818 20.25L17.068 4.5L6.75 4.5ZM4.5 4.5C4.5 3.25736 5.50736 2.25 6.75 2.25H17.068C17.6648 2.25 18.2371 2.48705 18.659 2.90901L34.409 18.659C35.2877 19.5377 35.2877 20.9623 34.409 21.841L24.091 32.159C23.2123 33.0377 21.7877 33.0377 20.909 32.159L5.15901 16.409C4.73705 15.9871 4.5 15.4148 4.5 14.818V4.5Z" fill="#110F21"/><path d="M12.375 11.25C11.7537 11.25 11.25 10.7463 11.25 10.125C11.25 9.50368 11.7537 9 12.375 9C12.9963 9 13.5 9.50368 13.5 10.125C13.5 10.7463 12.9963 11.25 12.375 11.25ZM12.375 13.5C14.239 13.5 15.75 11.989 15.75 10.125C15.75 8.26104 14.239 6.75 12.375 6.75C10.511 6.75 9 8.26104 9 10.125C9 11.989 10.511 13.5 12.375 13.5Z" fill="#110F21"/><path d="M2.25 15.943C2.25 16.5398 2.48705 17.1121 2.90901 17.534L19.6875 34.3125L19.591 34.409C18.7123 35.2877 17.2877 35.2877 16.409 34.409L0.659008 18.659C0.237051 18.2371 0 17.6648 0 17.068V6.75C0 5.50736 1.00736 4.5 2.25 4.5V15.943Z" fill="#110F21"/>
+                                    </svg>
+								{% endif %}
+							</div>
+						</div>
+						<div class="col-10 {% if promotion.selected or promotion.isEligible %} col-md-8{% else %} col-md-11{% endif %}">
+							<div class="promotion-info">
+								<div><strong>{{ promotion.title | raw }}</strong></div>
+								<span>{{ promotion.description | raw }}</span>
+							</div>
+						</div>
+						{% if promotion.selected or promotion.isEligible %}
+							<div class="col-12 col-md-3">
+								<div class="promotion-button">
+									{% if promotion.selected %}
+										<button type="button" class="btn btn-sm btn-block btn-secondary">{{ theme.settings.chosen_promotion }}</button>
+									{% elseif promotion.isEligible %}
+										<button type="button" class="btn btn-sm btn-block btn-primary" data-selector="{{ promotion.optionedProductSelection ? 'select-optioned-product-promotion' : 'select-promotion'}}" data-promotion-id="{{ promotion.id }}">{{ theme.settings.choose_promotion }}</button>
+									{% endif %}
+								</div>
+							</div>
+						{% endif %}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endif %}

@@ -26,4 +26,7 @@
             </li>
         {% endfor %}
     </ul>
+    <script>
+        var navigationMenu = {{ navigationMenu | json_encode }};
+    </script>
 {% endif %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    {% block page_styles %}{% endblock %}
+</head>
+<body class="current-page-{{ site.route.group }}-{{ site.route.name }}">
+<div class="signup-page-logo">
+    <a href="{{ path('entry') }}" aria-label="Logo">
+        {% if theme.settings.login_logo %}
+            <img src="{{ themeAsset(theme.settings.login_logo) }}" alt="">
+        {% else %}
+            <img src="{{ themeAsset(theme.settings.logo) }}" alt="">
+        {% endif %}
+    </a>
+</div>
+<div class="container">
+    <div class="signup-container{{ formResult.hasMessage and formResult.messageType == 'done' ? ' signup-container-information' : '' }}">
+        {% block content %}{% endblock %}
+    </div>
+</div>
+{% include 'html/snippets/scripts.twig' %}
+{% block page_scripts %}{% endblock %}
+</body>
+</html>

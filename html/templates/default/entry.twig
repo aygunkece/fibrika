@@ -5,4 +5,76 @@
             {% include 'html/snippets/theme-slider.twig' %}
         </div>
     {% endif %}
+
+    {% set productList = getProducts('home', {'limit': 20}) %}
+    {% if productList | length > 0 %}
+        <div class="collection-home4 container margin_bottom_150 margin_top_120">
+            <div class="row">
+                {% for item in productList %}
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 clear-space">
+                        {% include'html/snippets/showcase-item.twig' %}
+                    </div>
+                {% endfor %}
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 over-hidden relative banner_collection space_left_10">
+                    <a href="{{ themeBannerLink }}"{% if themeBannerTarget %} target="_blank"{% endif %}>
+                        <img src="{{ themeAsset(themeBannerImage) }}" alt="{{ themeBannerTagTitle }}"
+                             class="img-responsive hover-zoom-out">
+                    </a>
+                    <a href="{{ themeBannerLink }}" {% if themeBannerTarget %}
+                        target="_blank"{% endif %}
+                       class="title-font name_collection absolute">New collection 2018</a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="container shipping-home4 margin_bottom_150">
+        <div class="row">
+            {% for i in 1..3 %}
+            {% set themeBannerCheck = theme.settings["theme_banner_check_" ~ i] %}
+            {% set themeBannerTarget = theme.settings["theme_banner_target_" ~ i] %}
+            {% set themeBannerImage = theme.settings["theme_banner_image_" ~ i] %}
+            {% set themeBannerLink = theme.settings["theme_banner_link_" ~ i] %}
+            {% if themeBannerCheck %}
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 content">
+                <div class="flex">
+                    {% if themeBannerLink %}
+                    <a href="{{ themeBannerLink }}"{% if themeBannerTarget %} target="_blank"{% endif %}>
+                        <img src="{{ themeAsset(themeBannerImage) }}" />
+                    </a>
+                    {% else %}
+                    <img src="{{ themeAsset(themeBannerImage) }}" class="img-responsive" alt="">
+                    <span class="title-font title-ship space_left_30">{{ theme.settings.shopping_title }}</span>
+                </div>
+                <p class="des-font des-ship">{{ theme.settings.shopping_sub_title }}</p>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    {% set productList = getProducts('home', {'limit': 20}) %}
+    {% if productList | length > 0 %}
+        <div class="collection-home4 container margin_bottom_150 margin_top_120">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 over-hidden relative banner_collection space_left_10">
+                    <a href="{{ themeBannerLink }}"{% if themeBannerTarget %} target="_blank"{% endif %}>
+                        <img src="{{ themeAsset(themeBannerImage) }}" alt="{{ themeBannerTagTitle }}"
+                             class="img-responsive hover-zoom-out">
+                    </a>
+                    <a href="{{ themeBannerLink }}" {% if themeBannerTarget %}
+                        target="_blank"{% endif %}
+                       class="title-font name_collection absolute">Clothings</a>
+                </div>
+                {% for item in productList %}
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 clear-space">
+                        {% include'html/snippets/showcase-item.twig' %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+
+
+
 {% endblock %}

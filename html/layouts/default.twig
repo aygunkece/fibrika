@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    {% block page_styles %}{% endblock %}
+</head>
+<body class="current-page-{{ site.route.group }}-{{ site.route.name }}">
+{% include 'html/snippets/header.twig' %}
+<main id="main">
+    {% block breadcrumb %}{% endblock %}
+    <div class="container">
+        <div class="row">
+            <aside class="{% if theme.settings.showcase_repeat_columns == 4 %}col-lg-51{% else %}col-lg-3{% endif %}">
+                <div id="left-block">
+                    {{ macro_global('leftBlocks') }}
+                </div>
+            </aside>
+            <section class="{% if theme.settings.showcase_repeat_columns == 4 %}col-lg-54{% else %}col-lg-9{% endif %}">
+                {% block content %}{% endblock %}
+            </section>
+        </div>
+    </div>
+</main>
+<footer id="footer">
+    {% include 'html/snippets/footer.twig' %}
+</footer>
+{% include 'html/snippets/scripts.twig' %}
+{% block page_scripts %}{% endblock %}
+</body>
+</html>
