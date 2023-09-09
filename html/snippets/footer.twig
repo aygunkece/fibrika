@@ -1,35 +1,7 @@
-<div class="contact-home1 space_top_100 space_bot_120">
+<div class="contact-home1 space_top_100 space_bot_120 ">
     <div class="container">
-        <div class="row">
-            <div class="newsletter-home3 space_bot_150 space_top_130 BG">
-                {% if theme.settings.newsletter_title or theme.settings.newsletter_short_details %}
-                    {% if theme.settings.newsletter_title %}
-                        <h1 class="title-font capital title-newsletter text-center">{{ theme.settings.newsletter_title }}</h1>
-                    {% endif %}
-                    {% if theme.settings.newsletter_short_details %}
-                        <p class="des-font des-newsletter space_bot_60 text-center">{{ theme.settings.newsletter_short_details }}</p>
-                    {% endif %}
-                {% endif %}
-                <form class="form-group des-font flex" method="post" target="_blank">
-                    <input type="email" name="EMAIL" class="form-control" placeholder="{{ theme.settings.newsletter_placeholder }}"
-                           onfocus="this.placeholder = ''" onblur="this.placeholder = '{{ theme.settings.newsletter_placeholder }}'"
-                           aria-label="Newsletter Email" autocomplete="off" >
-                    <button type="submit" aria-label="Submit" class="menu-font uppercase">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_542_928)">
-                                <path d="M22 20.007C21.9982 20.2696 21.8931 20.521 21.7075 20.7068C21.5219 20.8926 21.2706 20.9979 21.008 21H2.992C2.72881 20.9997 2.4765 20.895 2.29049 20.7088C2.10448 20.5226 2 20.2702 2 20.007V19H20V7.3L12 14.5L2 5.5V4C2 3.73478 2.10536 3.48043 2.29289 3.29289C2.48043 3.10536 2.73478 3 3 3H21C21.2652 3 21.5196 3.10536 21.7071 3.29289C21.8946 3.48043 22 3.73478 22 4V20.007ZM4.434 5L12 11.81L19.566 5H4.434ZM0 15H8V17H0V15ZM0 10H5V12H0V10Z" fill="white"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_542_928">
-                                    <rect width="24" height="24" fill="white"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                    </button>
-                </form>
-            </div>
-
-            <div class="footer-row-2">
+        <div class="row ">
+            <div class="footer-row-2 center-block">
                 <div class="container">
                     {% if theme.settings.footer_links | spaceless | length > 0 %}
                         <div class="footer-menu-container" data-menu-type="{{ theme.settings.footer_menu_type }}">
@@ -38,7 +10,9 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="footer-row-3">
+        </div>
+        <div class="row">
+            <div class="footer-row-3 center-block">
                 <div class="container">
                     <div class="footer-copyright">
                         <div>
@@ -109,15 +83,14 @@
                     </div>
                 </div>
             </div>
-            <div id="scroll-top">
-                <i class="fas fa-chevron-up"></i>
-            </div>
         </div>
+            {% if theme.settings.scroll_top %}
+                <div class="overlay"></div>
+                <div class="gotop text-center fade">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M14.1667 11.1753L10.5917 7.64201C10.5142 7.5639 10.4221 7.5019 10.3205 7.4596C10.219 7.41729 10.11 7.39551 10 7.39551C9.89003 7.39551 9.78111 7.41729 9.67956 7.4596C9.57801 7.5019 9.48584 7.5639 9.40837 7.64201L5.87504 11.1753C5.79693 11.2528 5.73494 11.345 5.69263 11.4465C5.65032 11.5481 5.62854 11.657 5.62854 11.767C5.62854 11.877 5.65032 11.9859 5.69263 12.0875C5.73494 12.189 5.79693 12.2812 5.87504 12.3587C6.03117 12.5139 6.24238 12.601 6.46254 12.601C6.68269 12.601 6.8939 12.5139 7.05004 12.3587L10 9.40867L12.95 12.3587C13.1053 12.5126 13.3148 12.5994 13.5334 12.6003C13.643 12.601 13.7518 12.58 13.8533 12.5385C13.9548 12.497 14.0472 12.4359 14.125 12.3587C14.2059 12.284 14.2712 12.194 14.3172 12.094C14.3631 11.9939 14.3887 11.8857 14.3926 11.7757C14.3965 11.6657 14.3785 11.556 14.3397 11.4529C14.301 11.3499 14.2421 11.2555 14.1667 11.1753Z" fill="white"/>
+                    </svg>
+                </div>
+            {% endif %}
     </div>
 </div>
-
-{#
-<div class="container-fluid des-font text-center space_top_bot_50 copyright">
-    Copyright © 2018 EngoTheme. All rights reserved.
-</div>
-#}
