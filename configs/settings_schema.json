@@ -169,7 +169,7 @@
                     },
                     "display_bread_crumb": {
                         "type": "checkbox",
-                        "default_value": 1,
+                        "default_value": 0,
                         "label": "Breadcrumb Kullanımı",
                         "info": "Kategori ve Marka sayfalarında breadcrumb kullanımını aktif eder. Breadcrumb, web sitelerindeki kullanıcıların konumlarını takip etmelerini sağlayan bir navigasyon öğesidir ve gezdikleri sayfaların hiyerarşik yolunu gösterir."
                     },
@@ -2545,8 +2545,18 @@
                     },
                     "blog_header": {
                         "type": "text",
-                        "default_value": "Blog",
+                        "default_value": "Son blog yazılarımız",
                         "label": "Blog Başlığı"
+                    },
+                    "blog_abstract": {
+                        "type": "text",
+                        "default_value": "I did not even know that there were any better conditions to escape to, but I was more than willing to<br>take my chances among people fashioned after.",
+                        "label": "Blog Özeti"
+                    },
+                    "blog_read_more": {
+                        "type": "text",
+                        "default_value": "DEVAMI",
+                        "label": "Blog Devamını Oku Butonu"
                     }
                 }
             }

@@ -147,36 +147,42 @@
             </div>
         </div>
     </div>
+    <div class="overlay"></div>
+    <div class="form-search delay03 text-center">
+        <i id="close-search">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+            </svg>
+        </i>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_542_1623)">
+                <path d="M11 2C15.968 2 20 6.032 20 11C20 15.968 15.968 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2ZM11 18C14.867 18 18 14.867 18 11C18 7.132 14.867 4 11 4C7.132 4 4 7.132 4 11C4 14.867 7.132 18 11 18ZM19.485 18.071L22.314 20.899L20.899 22.314L18.071 19.485L19.485 18.071Z" fill="black"/>
+            </g>
+            <defs>
+                <clipPath id="clip0_542_1623">
+                    <rect width="24" height="24" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+        <h3 class="text-center title-font">what are<br>your looking for ?</h3>
+        <form method="get" action="{{ path("search") }}" role="search">
+            <input type="text" class="form-control control-search des-font" value="" autocomplete="off" placeholder="{{ theme.settings.search_placeholder }}" aria-label="SEARCH" name="q">
+            <button class="button_search title-font" type="submit">search</button>
+        </form>
+
+    </div>
+    <div class="form-cart delay03">
+        <i id="close-cart">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+            </svg>
+        </i>
+        <h3 class="title-font capital my-text">my cart</h3>
+        <div class="empty-cart">
+            <p class="des-font">No products in the cart.</p>
+            <a href="{{ path("cart_index") }}" class="capital des-font">start shopping</a>
+        </div>
+
+    </div>
 </header>
 
-<div class="form-search delay03 text-center">
-
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_542_1623)">
-            <path d="M11 2C15.968 2 20 6.032 20 11C20 15.968 15.968 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2ZM11 18C14.867 18 18 14.867 18 11C18 7.132 14.867 4 11 4C7.132 4 4 7.132 4 11C4 14.867 7.132 18 11 18ZM19.485 18.071L22.314 20.899L20.899 22.314L18.071 19.485L19.485 18.071Z" fill="black"/>
-        </g>
-        <defs>
-            <clipPath id="clip0_542_1623">
-                <rect width="24" height="24" fill="white"/>
-            </clipPath>
-        </defs>
-    </svg>
-    <h3 class="text-center title-font">what are<br>your looking for ?</h3>
-    <form method="get" action="{{ path("search") }}" role="search">
-        <input type="text" class="form-control control-search des-font" value="" autocomplete="off" placeholder="{{ theme.settings.search_placeholder }}" aria-label="SEARCH" name="q">
-        <button class="button_search title-font" type="submit">search</button>
-    </form>
-
-</div>
-<div class="form-cart delay03">
-   <i id="close-cart">
-       <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-           <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
-   </i>
-    <h3 class="title-font capital my-text">my cart</h3>
-    <div class="empty-cart">
-        <p class="des-font">No products in the cart.</p>
-        <a href="{{ path("cart_index") }}" class="capital des-font">start shopping</a>
-    </div>
-
-</div>

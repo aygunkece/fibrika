@@ -122,5 +122,40 @@
             </button>
         </form>
     </div>
+    {% if theme.settings.blog_check %}
+        {% set blogList = getBlogs() %}
+        {% if blogList | length > 0 %}
+            <div class="container blog-home4 space_top_bot_150">
+                <div class="row">
+            {% if theme.settings.blog_header %}
+                    <h1 class="title-blog title-font text-center">{{ theme.settings.blog_header }}</h1>
+                {% if theme.settings.blog_abstract %}
+                    <p class="des-font des-blog text-center space_bot_60">{{ theme.settings.blog_abstract }}</p>
+                    {% endif %}
+            {% endif %}
+                    <div class="row d-flex">
+                        {% for blog in blogList | slice(0,3) %}
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 content-blog space_right_10">
+                                <a href="{{ blog.url }}" title="{{ blog.title }}" class="inline-block over-hidden">
+                                    <img src="{{ blog.imagePath }}" class="img-responsive hover-zoom-out" alt="{{ blog.title }}">
+                                </a>
+                                <h2 class="title-font capital title-post">
+                                    <a href="{{ blog.url }}" title="{{ blog.title }}">
+                                        {{ blog.title }}
+                                    </a>
+                                </h2>
+                                {# <p class="des-font day-post">11/13/2018</p>#}
+                                <p class="des-font des-post">
+                                    {{ blog.excerpt | raw }}
+                                </p>
+                                <a href="{{ blog.url }}" class="menu-font link-more uppercase">{{ theme.settings.blog_read_more }}</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+        {% endif %}
+    {% endif %}
 
 {% endblock %}
