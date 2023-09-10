@@ -25,21 +25,19 @@
                             {% if product.images | length > 0 %}
                                 <img  alt="{{ product.fullName }}"
                                      src="{{ product.primaryImage.originalUrl }}"
-                                     class="img-responsive full-width">
+                                     class="img-responsive full-width" id="fullWidthSlideNxx">
                             {% else %}
                                 <img class="product-no-picture" alt="{{ product.fullName }}"
                                      src="{{ product.primaryImage.originalUrl | default(getNopicImageUrl()) }}"/>
                             {% endif %}
                         </div>
-
                     </div>
                     {% if product.images | length > 0 %}
                         <div class="slick-nav-product-detail">
                             {% for image in product.images %}
                                 {% if image.thumbUrl %}
                                     <div>
-                                            <img src="{{ image.thumbUrl }}" class="img-responsive"
-                                                 alt="{{ product.fullName }}">
+                                            <img src="{{ image.thumbUrl }}" class="img-responsive imgSlideNxx" alt="{{ product.fullName }}">
                                     </div>
                                 {% endif %}
                             {% endfor %}
@@ -325,3 +323,9 @@
 
     {% endblock %}
 
+<script>
+    $('.imgSlideNxx').click(function () {
+        let src = $(this).attr("src");
+        $('#fullWidthSlideNxx').attr("src", src);
+    })
+</script>
