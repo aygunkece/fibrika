@@ -701,3 +701,5 @@ $('#close-cart').on('click',function(){
     $('.overlay').css('opacity','0').css('visibility','hidden');
 });
 // -------------end----------
+
+

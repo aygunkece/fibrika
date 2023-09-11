@@ -1,12 +1,16 @@
 {% extends 'html/layouts/content-fluid.twig' %}
 {% block page_scripts %}
+    <script type="text/javascript" src="{{ themeAsset('javascript/jquery.elevatezoom.js') }}"></script>
+    <script type="text/javascript" src="{{ themeAsset('javascript/rateyo.js') }}"></script>
+    <script type="text/javascript" src="{{ themeAsset('javascript/product.js') }}"></script>
+    <script>
+        $('header').removeAttr("class");
+    </script>
 {% endblock %}
 {% block breadcrumb %}
-    <div class="margin_top_150">
         <div class="container">
         {% include 'html/snippets/product/breadcrumb.twig' %}
         </div>
-    </div>
 {% endblock %}
 {% block content %}
         <div class="container product-detail margin_bottom_150">
@@ -105,7 +109,7 @@
                     {% if product.isVariantAvailable %}
                         <div class="product-options margin_bottom_30">
                             {% if theme.settings.optioned_product_view_type == "radiobox_multiple" %}
-                                <div class="variant-group-title menu-font">{{ getLang("_Options_") }}</div>
+                                <div class="variant-group-title">{{ getLang("_Options_") }}</div>
                             {% endif %}
                             {% include "html/snippets/product/option.twig" %}
                         </div>
@@ -320,12 +324,11 @@
                 </button>
             </form>
         </div>
+    {% if theme.settings.use_rich_snippets %}
+        {% include 'html/snippets/product/rich-snippet.twig' %}
+    {% endif %}
+    {% include 'html/snippets/product/tracking.twig' %}
+    {% include 'html/snippets/product/form/add-comment.twig' %}
+    {% include 'html/snippets/product/form/send-recommend.twig' %}
 
     {% endblock %}
-
-<script>
-    $('.imgSlideNxx').click(function () {
-        let src = $(this).attr("src");
-        $('#fullWidthSlideNxx').attr("src", src);
-    })
-</script>

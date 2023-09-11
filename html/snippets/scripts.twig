@@ -4,15 +4,19 @@
 <script type="text/javascript" src="{{ themeAsset('javascript/function-select-custom.js') }}"></script>
 <script type="text/javascript" src="{{ themeAsset('javascript/function-input-number.js') }}"></script>
 
+<script>
+    $('.imgSlideNxx').click(function () {
+        let src = $(this).attr("src");
+        src = src.replace("_min", "");
+        $('#fullWidthSlideNxx').attr("src", src);
+    });
+
+
+
+</script>
 {#
 <script type="text/javascript" src="{{ themeAsset('javascript/function-imagezoom.js') }}"></script>
-#}
-{#
 <script type="text/javascript" src="{{ themeAsset('javascript/function-range.js') }}"></script>
-#}
-{#
 <script type="text/javascript" src="{{ themeAsset('javascript/function-right-to-left.js') }}"></script>
-#}
-{#
 <script type="text/javascript" src="{{ themeAsset('javascript/map.js') }}"></script>
 #}
