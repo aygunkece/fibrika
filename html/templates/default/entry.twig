@@ -1,4 +1,9 @@
 {% extends 'html/layouts/content-fluid.twig' %}
+{% block page_scripts %}
+<script>
+    $('header').addClass("fixed");
+</script>
+{% endblock %}
 {% block content %}
     {% if theme.settings.slide_status %}
 
@@ -13,7 +18,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 clear-space no-padding-left">
                         {% for item in productList %}
-                            {% include 'html/snippets/showcase-item.twig' %}
+                            {% include 'html/snippets/showcase-item-square.twig' %}
                         {% endfor %}
                     </div>
                     <!--  -->
@@ -84,7 +89,7 @@
                     <!--  -->
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 clear-space no-padding-left">
                         {% for item in productList %}
-                            {% include 'html/snippets/showcase-item.twig' %}
+                            {% include 'html/snippets/showcase-item-square.twig' %}
                         {% endfor %}
                     </div>
                 </div>

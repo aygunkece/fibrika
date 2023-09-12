@@ -144,16 +144,4 @@
 			var self = this;
 		}
 	}
-
-	// .variant-select classına sahip select elementlerini dinle
-	$('.variant-group-title select.variant-select').on('change', function() {
-		// Seçilen varyantın değerini al
-		var secilenVaryant = $(this).val();
-
-		// Tüm optionları seçili olmaktan kaldır
-		$(this).find('option').removeAttr('selected');
-
-		// Seçilen varyantı "selected" yap
-		$(this).find('option[value="' + secilenVaryant + '"]').attr('selected', 'selected');
-	});
 })(jQuery, window);
