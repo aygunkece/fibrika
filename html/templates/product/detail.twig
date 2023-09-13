@@ -6,6 +6,15 @@
     {#<script>
         $('header').removeAttr("class");
     </script>#}
+    <script>
+      /*  var selectElement = $('select[name="variant-0"]');
+
+        selectElement.on('change', function() {
+            setTimeout(function() {
+                location.reload();
+            }, 2000);
+        });*/
+    </script>
 {% endblock %}
 {% block breadcrumb %}
         <div class="container">
@@ -13,7 +22,7 @@
         </div>
 {% endblock %}
 {% block content %}
-        <div class="container product-detail margin_bottom_150">
+        <div class="container product-detail margin_bottom_150" id="product-detail-container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 margin_bottom_50">
                     <div class="product-label-group">
@@ -48,7 +57,7 @@
                         </div>
                     {% endif %}
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 info-product-detail">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 info-product-detail product-title">
                     <h1 class="title-font title-product margin_bottom_30">{{ product.fullName }}</h1>
                     {% if preferences.sales_allowed %}
                         <div class="product-price{% if product.isDiscounted %} has-discount{% endif %}">
@@ -185,7 +194,7 @@
                                         <div class="product-buttons-row">
                                             <div>
                                                 <a href="javascript:void(0);"
-                                                   class="enj-add-to-cart-btn btn-default menu-font uppercase hover-border"
+                                                   class="btn-default menu-font uppercase hover-border"
                                                    data-selector="add-to-cart" data-context="detail"
                                                    data-product-id="{{ product.id }}">{{ theme.settings.addtocart_button }}</a>
                                             </div>

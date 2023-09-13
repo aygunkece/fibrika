@@ -703,8 +703,13 @@
                     },
                     "search_placeholder": {
                         "type": "text",
-                        "default_value": "Ne aramıştınız?",
+                        "default_value": "Ne aramıştınız?, Örn; T-Shirt",
                         "label": "Arama Metni"
+                    },
+                    "search_title": {
+                        "type": "text",
+                        "default_value": "Ne aramıştınız ?",
+                        "label": "Arama Başlığı"
                     },
                     "home_products_title": {
                         "type": "text",
@@ -1087,6 +1092,11 @@
                                     "default_value": "",
                                     "label": "Slide Başlık Yazısı"
                                 },
+                                "slider_subtitle_1": {
+                                    "type": "text",
+                                    "default_value": "",
+                                    "label": "Alt Başlık Yazısı 1"
+                                },
                                 "slider_title_color_1": {
                                     "type": "colorpicker",
                                     "default_value": "#ffffff",
@@ -1216,6 +1226,11 @@
                                     "type": "text",
                                     "default_value": "",
                                     "label": "Slide Başlık Yazısı"
+                                },
+                                "slider_subtitle_2": {
+                                    "type": "text",
+                                    "default_value": "",
+                                    "label": "Alt Başlık Yazısı 2"
                                 },
                                 "slider_title_color_2": {
                                     "type": "colorpicker",
@@ -1347,6 +1362,11 @@
                                     "default_value": "",
                                     "label": "Slide Başlık Yazısı"
                                 },
+                                "slider_subtitle_3": {
+                                    "type": "text",
+                                    "default_value": "",
+                                    "label": "Alt Başlık Yazısı 3"
+                                },
                                 "slider_title_color_3": {
                                     "type": "colorpicker",
                                     "default_value": "#ffffff",
@@ -1476,6 +1496,11 @@
                                     "type": "text",
                                     "default_value": "",
                                     "label": "Slide Başlık Yazısı"
+                                },
+                                "slider_subtitle_4": {
+                                    "type": "text",
+                                    "default_value": "",
+                                    "label": "Alt Başlık Yazısı 4"
                                 },
                                 "slider_title_color_4": {
                                     "type": "colorpicker",
@@ -1607,6 +1632,11 @@
                                     "default_value": "",
                                     "label": "Slide Başlık Yazısı"
                                 },
+                                "slider_subtitle_5": {
+                                    "type": "text",
+                                    "default_value": "",
+                                    "label": "Alt Başlık Yazısı 5"
+                                },
                                 "slider_title_color_5": {
                                     "type": "colorpicker",
                                     "default_value": "#ffffff",
@@ -1736,6 +1766,11 @@
                                     "type": "text",
                                     "default_value": "",
                                     "label": "Slide Başlık Yazısı"
+                                },
+                                "slider_subtitle_6": {
+                                    "type": "text",
+                                    "default_value": "",
+                                    "label": "Alt Başlık Yazısı 6"
                                 },
                                 "slider_title_color_6": {
                                     "type": "colorpicker",
@@ -1867,6 +1902,11 @@
                                     "default_value": "",
                                     "label": "Slide Başlık Yazısı"
                                 },
+                                "slider_subtitle_7": {
+                                    "type": "text",
+                                    "default_value": "",
+                                    "label": "Slide Alt Başlık Yazısı 7"
+                                },
                                 "slider_title_color_7": {
                                     "type": "colorpicker",
                                     "default_value": "#ffffff",
@@ -1996,6 +2036,11 @@
                                     "type": "text",
                                     "default_value": "",
                                     "label": "Slide Başlık Yazısı"
+                                },
+                                "slider_subtitle_8": {
+                                    "type": "text",
+                                    "default_value": "",
+                                    "label": "Slide Alt Başlık Yazısı 8"
                                 },
                                 "slider_title_color_8": {
                                     "type": "colorpicker",
@@ -2127,6 +2172,11 @@
                                     "default_value": "",
                                     "label": "Slide Başlık Yazısı"
                                 },
+                                "slider_subtitle_9": {
+                                    "type": "text",
+                                    "default_value": "",
+                                    "label": "Alt Başlık Yazısı 9"
+                                },
                                 "slider_title_color_9": {
                                     "type": "colorpicker",
                                     "default_value": "#ffffff",
@@ -2256,6 +2306,11 @@
                                     "type": "text",
                                     "default_value": "",
                                     "label": "Slide Başlık Yazısı"
+                                },
+                                "slider_subtitle_10": {
+                                    "type": "text",
+                                    "default_value": "",
+                                    "label": "Alt Başlık Yazısı 10"
                                 },
                                 "slider_title_color_10": {
                                     "type": "colorpicker",
@@ -2550,7 +2605,7 @@
                     },
                     "blog_abstract": {
                         "type": "text",
-                        "default_value": "I did not even know that there were any better conditions to escape to, but I was more than willing to<br>take my chances among people fashioned after.",
+                        "default_value": "Moda, sadece giyim değil, aynı zamanda bir ifade biçimidir. Stilinizi seçerken <br> özgünlüğünüzü ve kendinizi yansıtmayı unutmayın. Renkler, desenler, kesimler ve aksesuarlarla kendi tarzınızı yaratın. <br> Her gün bir podyum, her an bir fırsat olabilir. Modanın sihirli dünyasında kendinizi ifade edin ve daima dikkat çekici olun.",
                         "label": "Blog Özeti"
                     },
                     "blog_read_more": {

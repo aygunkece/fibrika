@@ -1,5 +1,5 @@
 {% set orders = {"1": theme.settings.slider_order_1,"2": theme.settings.slider_order_2,"3": theme.settings.slider_order_3,"4": theme.settings.slider_order_4,"5": theme.settings.slider_order_5,"6": theme.settings.slider_order_6,"7": theme.settings.slider_order_7,"8": theme.settings.slider_order_8,"9": theme.settings.slider_order_9,"10": theme.settings.slider_order_10} %}
-<div class="slider-home4 container-fluid clear-space relative">
+<div class="slider-home4 container-fluid clear-space relative theme-slider">
     {% for slide, order in orders | sort %}
         {% if order != '' %}
             {% if theme.settings['slider_status_' ~ slide] %}
@@ -64,7 +64,7 @@
                                 {% endif %}
                             </div>
                             <div class="absolute seasion">
-                                <p class="number-font delay2">Summner 2018</p>
+                                <p class="number-font delay2">{{ theme.settings['slider_subtitle_' ~ slide] }}</p>
                             </div>
                         {% endif %}
                     {% endif %}
@@ -83,8 +83,8 @@
                 speed: {{ theme.settings.slide_speed }},
                 arrows: {{ theme.settings.slider_arrows == 1 ? 'true' : 'false' }},
                 infinite: true,
-                prevArrow: '<button type="button" class="slick-prev" aria-label="Previous"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M7 11.5199C7 11.2014 7.123 10.8829 7.3689 10.6838L14.9098 3.35831C15.4016 2.88056 16.1803 2.88056 16.6311 3.35831C17.1229 3.83607 17.1229 4.59251 16.6311 5.03044L9.9918 11.4801L16.6311 17.9696C17.1229 18.4473 17.1229 19.2037 16.6311 19.6417C16.1393 20.1194 15.3607 20.1194 14.9098 19.6417L7.3689 12.356C7.1639 12.1171 7 11.7986 7 11.5199Z" fill="black"/> </svg></button>',
-                nextArrow: '<button type="button" class="slick-next" aria-label="Next"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M17 12.4801C17 12.7986 16.877 13.1171 16.6311 13.3162L9.09016 20.6417C8.59836 21.1194 7.81967 21.1194 7.36885 20.6417C6.87705 20.1639 6.87705 19.4075 7.36885 18.9696L14.0082 12.5199L7.36885 6.0304C6.87705 5.5527 6.87705 4.7963 7.36885 4.3583C7.86066 3.8806 8.63934 3.8806 9.09016 4.3583L16.6311 11.644C16.8361 11.8829 17 12.2014 17 12.4801Z" fill="black"/> </svg></button>',
+                prevArrow: '<button type="button" class="slick-prev" aria-label="Previous"><i class="fa fa-chevron-down text-white"></i> </button>',
+                nextArrow: '<button type="button" class="slick-next" aria-label="Next"><i class="fa fa-chevron-up text-white"></i> </button>',
                 dots: {{ theme.settings.slider_dots == 1 ? 'true' : 'false' }},
                 adaptiveHeight: true
             });

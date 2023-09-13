@@ -1,3 +1,5 @@
+$color-primary: {{ theme.settings.color_primary }};
+@import "mixin";
 /* Slider */
 .slick-slider
 {
@@ -1303,7 +1305,7 @@ li:hover .link-menu {
   overflow: hidden; }
 
 .overlay {
-  position: fixed;
+  /*position: fixed;*/
   width: 100%;
   height: 100%;
   top: 0;
@@ -1741,10 +1743,10 @@ li:hover .link-menu {
   margin: 0 5px; }
 
 .number-font {
-  font-family: "FuturaPT Heavy"; }
+  font-family: "FuturaPT Heavy" }
 
 .title-font {
-  font-family: FuturaPT; }
+  font-family: $font-family; }
 
 .des-font {
   font-family: "FuturaPT Book"; }
@@ -2077,7 +2079,7 @@ li:hover .link-menu {
   border-radius: 0; }
 .slick-prev:before {
   font-family: 'themify';
-  content: '\e629';
+  content: '9';
   font-size: 14px;
   color: #222; }
 
@@ -2091,7 +2093,7 @@ li:hover .link-menu {
   border-radius: 0; }
 .slick-next:before {
   font-family: 'themify';
-  content: '\e628';
+  content: '';
   font-size: 14px;
   color: #222; }
 
@@ -2789,7 +2791,7 @@ header {
   left: unset !important;
 }
 .slider-home4 button.slick-prev:before {
-  content: "\e64b";
+  content: "";
   color: #fff; }
 .slider-home4 button.slick-next {
   width: 60px;
@@ -2800,7 +2802,7 @@ header {
   top: 30%;
   right: 12.5%; }
 .slider-home4 button.slick-next:before {
-  content: "\e648";
+  content: "";
   color: #fff; }
 
 .collection-home4 .product {
