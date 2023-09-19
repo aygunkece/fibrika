@@ -1698,7 +1698,7 @@ li:hover .link-menu {
   background: #fff;
   text-align: left;
   transition: all 0.2s ease-in;
-  font-family: "FuturaPT Book";
+  font-family: $font-family;
   font-size: 18px; }
 .select-styled:after {
   content: "\e64b";
@@ -1706,12 +1706,12 @@ li:hover .link-menu {
   top: 4px;
   right: 2px;
   font-size: 14px;
-  font-family: 'themify'; }
+  font-family: $font-family; }
 .select-styled:active:after, .select-styled.active:after {
   transform: rotate(180deg); }
 
 .select-options {
-  font-family: "FuturaPT Book";
+  font-family: $font-family;
   font-size: 18px;
   display: none;
   position: absolute;
@@ -1743,22 +1743,22 @@ li:hover .link-menu {
   margin: 0 5px; }
 
 .number-font {
-  font-family: "FuturaPT Heavy" }
+  font-family: $font-family }
 
 .title-font {
   font-family: $font-family; }
 
 .des-font {
-  font-family: "FuturaPT Book"; }
+  font-family: $font-family; }
 
 .menu-font {
-  font-family: "FuturaPT Demi"; }
+  font-family: $menu-font-family; }
 
 .menu-child-font {
-  font-family: "FuturaPT light"; }
+  font-family: $font-family; }
 
 .extra-bold-font {
-  font-family: "MuliExtraBold"; }
+  font-family: $font-family; }
 
 @media (min-width: 1200px)
 {
@@ -1830,7 +1830,7 @@ li:hover .link-menu {
 
 @media (min-width: 1800px) {
   .container {
-    width: 1750px; } }
+    width: 1750px } }
 @media (min-width: 320px) {
   .menu-fixed {
     padding: 30px 15px; } }
@@ -5370,7 +5370,10 @@ body.navigation-active {
 /* Navigation */
 #navigation {
   display: flex;
+  font-size: 14px;
+  /*
   justify-content: center;
+  */
   .category-level-1 {
     > ul {
       display: flex;
@@ -6594,7 +6597,7 @@ body.navigation-active {
           align-items: center;
           justify-content: space-between;
           cursor: pointer;
-          color: $color-text;
+          color: white;
           padding: var(--spacer-8);
           margin-bottom: var(--spacer-8);
           border: 1px solid $color-border;
@@ -6610,9 +6613,9 @@ body.navigation-active {
           display: none;
           > ul {
             > li {
-              color: $color-text;
+              color: white;
               > a {
-                color: $color-text;
+                color: white;
               }
             }
           }
@@ -9228,11 +9231,45 @@ body[class*="current-page-cart"] {
   }
   .col-xs-5 {
     padding-left: 15px !important;
+    width: 25% !important;
   }
   .title-slider{
     margin-top: 20px;
   }
+  .col-xs-7 {
+    width: 74.33% !important;
+  }
+  .content-blog{
+    padding-left: 15px !important;
+  }
 }
+
+@media (min-width: 600px) and (max-width: 900px ) {
+  .icon-main{
+    margin-left: 420px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1000px ) {
+  .col-sm-6{
+    float: left;
+  }
+  .col-md-6{
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1800px) {
+ main .container {
+    width: 1750px;
+    max-width: unset;
+ } }
+
+@media (min-width: 1800px) {
+  header .container {
+    width: 1750px;
+    max-width: unset;
+  } }
 
 .col-md-51 {
   float: left;
@@ -9265,6 +9302,55 @@ body[class*="current-page-cart"] {
 }
 .block-item-content-body .row{
     display: flex;
+}
+.margin_top_15{
+  margin-top: 15px !important;
+}
+
+.theme-slider .slick-dots {
+  visibility: hidden;
+}
+
+.brand-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.brand-area {
+  flex: 0 0 calc(20% - 30px); /* 5'li olarak yan yana sığdırmak için */
+  max-width: calc(20% - 30px); /* 5'li olarak yan yana sığdırmak için */
+  text-align: center;
+}
+
+.brand-area a {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .brand-div {
+    flex-wrap: wrap;
+  }
+
+  .brand-area {
+    flex: 0 0 calc(50% - 15px); /* 2'li olarak yan yana sığdırmak için */
+    max-width: calc(50% - 15px); /* 2'li olarak yan yana sığdırmak için */
+  }
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row !important;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+#navigation ul {
+  margin-top: 5px;
 }
 
 /*#cart-items .cart-item .row {

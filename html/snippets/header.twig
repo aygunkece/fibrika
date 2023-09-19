@@ -9,12 +9,12 @@
         <form role="search" method="get" id="searchform" class="searchform title-font" action="{{ path('search') }}">
             <div>
                 <label class="screen-reader-text" for="q"></label>
-                <input type="text" placeholder="Search for products" value="" name="q" id="q" autocomplete="off">
+                <input type="text" placeholder="{{ theme.settings.search_placeholder }}" value="" name="q" id="q" autocomplete="off">
                 <input type="hidden" name="type" value="product">
                 <button type="submit" id="searchsubmit">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_542_1623)">
-                            <path d="M11 2C15.968 2 20 6.032 20 11C20 15.968 15.968 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2ZM11 18C14.867 18 18 14.867 18 11C18 7.132 14.867 4 11 4C7.132 4 4 7.132 4 11C4 14.867 7.132 18 11 18ZM19.485 18.071L22.314 20.899L20.899 22.314L18.071 19.485L19.485 18.071Z" fill="black"/>
+                            <path d="M11 2C15.968 2 20 6.032 20 11C20 15.968 15.968 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2ZM11 18C14.867 18 18 14.867 18 11C18 7.132 14.867 4 11 4C7.132 4 4 7.132 4 11C4 14.867 7.132 18 11 18ZM19.485 18.071L22.314 20.899L20.899 22.314L18.071 19.485L19.485 18.071Z" fill="whitesmoke"/>
                         </g>
                         <defs>
                             <clipPath id="clip0_542_1623">
@@ -25,10 +25,8 @@
                 </button>
             </div>
         </form>
-
+       {# {{ macro_global('navigationMenu') }}#}
         <ul class="nav-home5 js-menubar clear-space menu-font">
-            {#{{ macro_global('navigationMenuMobile') }}#}
-
             <li>
                 {% if not visitor.isMember %}
                 <a href="{{ path('member_login') }}" class="inline-block uppercase"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -162,7 +160,7 @@
                     <div class="absolute label-cart number-font cart-amount" data-selector="cart-item-count"></div>
 
                 </a>
-                <a href="#" class="link-menu delay03 inline-block hidden-md hidden-lg space_left_10 btn-push-menu">
+                <a href="#" id="" class="link-menu delay03 inline-block hidden-md hidden-lg space_left_10 btn-push-menu">
                     <svg width="26" height="16" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 66 41" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
                                     <g>
                                         <line class="st0" x1="1.5" y1="1.5" x2="64.5" y2="1.5"></line>

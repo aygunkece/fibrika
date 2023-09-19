@@ -1,7 +1,8 @@
-{% if navigationMenu.categories | length > 0 %}
-    <ul class="nav navbar-nav menu-font menu-main">
+{% if navigationMenu.categories | length > 0 or site.menu_items.row1 | length > 0 or site.menu_items.row2 | length > 0 %}
+    <nav id="navigation">
+    <ul class="nav navbar-nav menu-font menu-main ">
         {% for firstLevelCategory in navigationMenu.categories %}
-            <li class="relative {% if firstLevelCategory.subCategories | length > 0 %} dropdown{% endif %}">
+            <li class="relative {% if firstLevelCategory.subCategories | length > 0 %} dropdown{% endif %}" data-selector="first-level-navigation">
                 <a href="{{ firstLevelCategory.url }}" title="{{ firstLevelCategory.name }}"
                    class="link-menu delay03 uppercase">{{ firstLevelCategory.name }}</a>
                 <figure class="line {% if loop.first %} active_line {% endif %} absolute delay03"></figure>
@@ -25,7 +26,34 @@
                 {% endif %}
             </li>
         {% endfor %}
+        {% if site.menu_items.row1 | length > 0 %}
+            {% for menu_item in site.menu_items.row1 %}
+                <li class="relative dropdown">
+                    <a href="{{ menu_item.link }}" target="{{ menu_item.target }}" rel="noopener" class="link-menu delay03 uppercase"><span>{{ menu_item.label }}</span></a>
+                    <figure class="{% if loop.first %}active_line{% endif%} line absolute delay03"></figure>
+                    {% if firstLevelCategory.subCategories | length > 0 %}
+                        <div class="dropdown-menu mega-menu-main absolute space_30 space_top_bot_50 text-left">
+                            <div class="container_15">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 border-right">
+                                        <ul class="clear-space capital lv1">
+                                            {% for secondLevelCategory in firstLevelCategory.subCategories %}
+                                                <li class="margin_bottom_20 space_left_20 uppercase">
+                                                    <a href="{{ secondLevelCategory.url }}"
+                                                       title="{{ secondLevelCategory.name }}">{{ secondLevelCategory.name }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        {% endif %}
     </ul>
+</nav>
     <script>
         var navigationMenu = {{ navigationMenu | json_encode }};
     </script>

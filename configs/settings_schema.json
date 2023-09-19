@@ -2614,7 +2614,351 @@
                         "label": "Blog Devamını Oku Butonu"
                     }
                 }
+            },
+          {
+            "name": "Tema Marka",
+            "group": {
+              "type": "tab",
+              "values": [
+                {
+                  "name": "Marka Sıralama",
+                  "settings": {
+                    "brand_order_1": {
+                      "type": "text",
+                      "default_value": "1",
+                      "label": "Marka 1 Sıra"
+                    },
+                    "brand_order_2": {
+                      "type": "text",
+                      "default_value": "2",
+                      "label": "Marka 2 Sıra"
+                    },
+                    "brand_order_3": {
+                      "type": "text",
+                      "default_value": "3",
+                      "label": "Marka 3 Sıra"
+                    },
+                    "brand_order_4": {
+                      "type": "text",
+                      "default_value": "4",
+                      "label": "Marka 4 Sıra"
+                    },
+                    "brand_order_5": {
+                      "type": "text",
+                      "default_value": "5",
+                      "label": "Marka 5 Sıra"
+                    },
+                    "brand_order_6": {
+                      "type": "text",
+                      "default_value": "6",
+                      "label": "Marka 6 Sıra"
+                    },
+                    "brand_order_7": {
+                      "type": "text",
+                      "default_value": "7",
+                      "label": "Marka 7 Sıra"
+                    },
+                    "brand_order_8": {
+                      "type": "text",
+                      "default_value": "8",
+                      "label": "Marka 8 Sıra"
+                    },
+                    "brand_order_9": {
+                      "type": "text",
+                      "default_value": "9",
+                      "label": "Marka 9 Sıra"
+                    },
+                    "brand_order_10": {
+                      "type": "text",
+                      "default_value": "10",
+                      "label": "Marka 10 Sıra"
+                    }
+                  }
+                },
+                {
+                  "name": "Anasayfa Marka 1",
+                  "settings": {
+                    "brand_status_1": {
+                      "type": "checkbox",
+                      "default_value": 1,
+                      "label": "Marka Pasif - Aktif"
+                    },
+                    "brand_picture_1": {
+                      "type": "image",
+                      "default_value": "",
+                      "filename": "brand_1",
+                      "label": "Marka Resmi",
+                      "info": ""
+                    },
+                    "brand_link_1": {
+                      "type": "text",
+                      "default_value": "",
+                      "label": "Marka Linki"
+                    },
+                    "brand_target_1": {
+                      "type": "checkbox",
+                      "default_value": 0,
+                      "label": "Linki Yeni Sekmede Aç",
+                      "info": ""
+                    }
+                  }
+                },
+                {
+                  "name": "Anasayfa Marka 2",
+                  "settings": {
+                    "brand_status_2": {
+                      "type": "checkbox",
+                      "default_value": 1,
+                      "label": "Marka Pasif - Aktif"
+                    },
+                    "brand_picture_2": {
+                      "type": "image",
+                      "default_value": "",
+                      "filename": "brand_2",
+                      "label": "Marka Resmi",
+                      "info": ""
+                    },
+                    "brand_link_2": {
+                      "type": "text",
+                      "default_value": "",
+                      "label": "Marka Linki"
+                    },
+                    "brand_target_2": {
+                      "type": "checkbox",
+                      "default_value": 0,
+                      "label": "Linki Yeni Sekmede Aç",
+                      "info": ""
+                    }
+                  }
+                },
+                {
+                  "name": "Anasayfa Marka 3",
+                  "settings": {
+                    "brand_status_3": {
+                      "type": "checkbox",
+                      "default_value": 1,
+                      "label": "Marka Pasif - Aktif"
+                    },
+                    "brand_picture_3": {
+                      "type": "image",
+                      "default_value": "",
+                      "filename": "brand_3",
+                      "label": "Marka Resmi",
+                      "info": ""
+                    },
+                    "brand_link_3": {
+                      "type": "text",
+                      "default_value": "",
+                      "label": "Marka Linki"
+                    },
+                    "brand_target_3": {
+                      "type": "checkbox",
+                      "default_value": 0,
+                      "label": "Linki Yeni Sekmede Aç",
+                      "info": ""
+                    }
+                  }
+                },
+                {
+                  "name": "Anasayfa Marka 4",
+                  "settings": {
+                    "brand_status_4": {
+                      "type": "checkbox",
+                      "default_value": 1,
+                      "label": "Marka Pasif - Aktif"
+                    },
+                    "brand_picture_4": {
+                      "type": "image",
+                      "default_value": "",
+                      "filename": "brand_4",
+                      "label": "Marka Resmi",
+                      "info": ""
+                    },
+                    "brand_link_4": {
+                      "type": "text",
+                      "default_value": "",
+                      "label": "Marka Linki"
+                    },
+                    "brand_target_4": {
+                      "type": "checkbox",
+                      "default_value": 0,
+                      "label": "Linki Yeni Sekmede Aç",
+                      "info": ""
+                    }
+                  }
+                },
+                {
+                  "name": "Anasayfa Marka 5",
+                  "settings": {
+                    "brand_status_5": {
+                      "type": "checkbox",
+                      "default_value": 1,
+                      "label": "Marka Pasif - Aktif"
+                    },
+                    "brand_picture_5": {
+                      "type": "image",
+                      "default_value": "",
+                      "filename": "brand_5",
+                      "label": "Marka Resmi",
+                      "info": ""
+                    },
+                    "brand_link_5": {
+                      "type": "text",
+                      "default_value": "",
+                      "label": "Marka Linki"
+                    },
+                    "brand_target_5": {
+                      "type": "checkbox",
+                      "default_value": 0,
+                      "label": "Linki Yeni Sekmede Aç",
+                      "info": ""
+                    }
+                  }
+                },
+                {
+                  "name": "Anasayfa Marka 6",
+                  "settings": {
+                    "brand_status_6": {
+                      "type": "checkbox",
+                      "default_value": 1,
+                      "label": "Marka Pasif - Aktif"
+                    },
+                    "brand_picture_6": {
+                      "type": "image",
+                      "default_value": "",
+                      "filename": "brand_6",
+                      "label": "Marka Resmi",
+                      "info": ""
+                    },
+                    "brand_link_6": {
+                      "type": "text",
+                      "default_value": "",
+                      "label": "Marka Linki"
+                    },
+                    "brand_target_6": {
+                      "type": "checkbox",
+                      "default_value": 0,
+                      "label": "Linki Yeni Sekmede Aç",
+                      "info": ""
+                    }
+                  }
+                },
+                {
+                  "name": "Anasayfa Marka 7",
+                  "settings": {
+                    "brand_status_7": {
+                      "type": "checkbox",
+                      "default_value": 1,
+                      "label": "Marka Pasif - Aktif"
+                    },
+                    "brand_picture_7": {
+                      "type": "image",
+                      "default_value": "",
+                      "filename": "brand_7",
+                      "label": "Marka Resmi",
+                      "info": ""
+                    },
+                    "brand_link_7": {
+                      "type": "text",
+                      "default_value": "",
+                      "label": "Marka Linki"
+                    },
+                    "brand_target_7": {
+                      "type": "checkbox",
+                      "default_value": 0,
+                      "label": "Linki Yeni Sekmede Aç",
+                      "info": ""
+                    }
+                  }
+                },
+                {
+                  "name": "Anasayfa Marka 8",
+                  "settings": {
+                    "brand_status_8": {
+                      "type": "checkbox",
+                      "default_value": 1,
+                      "label": "Marka Pasif - Aktif"
+                    },
+                    "brand_picture_8": {
+                      "type": "image",
+                      "default_value": "",
+                      "filename": "brand_8",
+                      "label": "Marka Resmi",
+                      "info": ""
+                    },
+                    "brand_link_8": {
+                      "type": "text",
+                      "default_value": "",
+                      "label": "Marka Linki"
+                    },
+                    "brand_target_8": {
+                      "type": "checkbox",
+                      "default_value": 0,
+                      "label": "Linki Yeni Sekmede Aç",
+                      "info": ""
+                    }
+                  }
+                },
+                {
+                  "name": "Anasayfa Marka 9",
+                  "settings": {
+                    "brand_status_9": {
+                      "type": "checkbox",
+                      "default_value": 1,
+                      "label": "Marka Pasif - Aktif"
+                    },
+                    "brand_picture_9": {
+                      "type": "image",
+                      "default_value": "",
+                      "filename": "brand_9",
+                      "label": "Marka Resmi",
+                      "info": ""
+                    },
+                    "brand_link_9": {
+                      "type": "text",
+                      "default_value": "",
+                      "label": "Marka Linki"
+                    },
+                    "brand_target_9": {
+                      "type": "checkbox",
+                      "default_value": 0,
+                      "label": "Linki Yeni Sekmede Aç",
+                      "info": ""
+                    }
+                  }
+                },
+                {
+                  "name": "Anasayfa Marka 10",
+                  "settings": {
+                    "brand_status_10": {
+                      "type": "checkbox",
+                      "default_value": 1,
+                      "label": "Marka Pasif - Aktif"
+                    },
+                    "brand_picture_10": {
+                      "type": "image",
+                      "default_value": "",
+                      "filename": "brand_10",
+                      "label": "Marka Resmi",
+                      "info": ""
+                    },
+                    "brand_link_10": {
+                      "type": "text",
+                      "default_value": "",
+                      "label": "Marka Linki"
+                    },
+                    "brand_target_10": {
+                      "type": "checkbox",
+                      "default_value": 0,
+                      "label": "Linki Yeni Sekmede Aç",
+                      "info": ""
+                    }
+                  }
+                }
+                
+              ]
             }
+          }
         ]
     }
 }
